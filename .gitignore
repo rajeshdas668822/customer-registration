@@ -1,0 +1,45 @@
+# List of files and folders/ for Git to ignore.
+
+# Build targets
+build/
+target/
+/buildeclipse/
+
+# Eclipse files
+.bin
+.settings
+.classpath
+.project
+.factorypath
+
+# Gradle files
+.gradle
+gradle-app.setting
+.idea/gradle.xml
+.idea/libraries/
+
+# User-specific IntelliJ files
+.idea/
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries/
+
+**/*~
+**/_*
+
+**/.settings/*
+**/target/*
+*.component
+**/.classpath
+**/*.ipr
+**/*.iml
+**/*.iws
+**/.idea/*
+**/.idea/workspace.xml
+**/.idea/tasks.xml
+.idea
+*.iml
+.allure
+
+**/.apt_generated/*
+**/dist/*
