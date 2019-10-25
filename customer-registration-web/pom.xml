@@ -12,22 +12,19 @@
         <groupId>org.spring.cloud.demo.insurance</groupId>
         <artifactId>customer-registration</artifactId>
         <version>1.0-SNAPSHOT</version>
-    </parent>
+    </parent>   
+
 
     <dependencies>
-        <dependency>
-            <groupId>org.spring.cloud.demo.insurance</groupId>
-            <artifactId>customer-registration-app</artifactId>
-        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <groupId>org.spring.cloud.demo.insurance</groupId>
+            <artifactId>customer-registration-app</artifactId>
 
         </dependency>
-    </dependencies>
 
+    </dependencies>
 </project>
