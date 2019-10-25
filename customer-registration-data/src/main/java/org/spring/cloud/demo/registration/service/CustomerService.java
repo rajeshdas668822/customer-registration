@@ -1,9 +1,8 @@
 package org.spring.cloud.demo.registration.service;
 
-import org.spring.cloud.demo.registration.model.Customer;
-import reactor.core.publisher.Mono;
+import org.spring.cloud.demo.registration.entity.Customer;
 
 public interface CustomerService {
-    Mono<Customer> createCustomer(Customer customer);
+    Customer createCustomer(Customer customer);
 
 }

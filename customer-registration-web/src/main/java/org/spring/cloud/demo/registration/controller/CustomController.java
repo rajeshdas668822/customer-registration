@@ -1,12 +1,13 @@
 package org.spring.cloud.demo.registration.controller;
 
 
-import org.spring.cloud.demo.registration.model.Customer;
+import org.spring.cloud.demo.registration.entity.Customer;
 import org.spring.cloud.demo.registration.repository.CustomerRepository;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import reactor.core.publisher.Flux;
+
+import java.util.List;
 
 
 @RestController
@@ -20,7 +21,7 @@ public class CustomController {
 
     @GetMapping("/")
     @Transactional
-    public Flux<Customer> findCustomers(){
+    public List<Customer> findCustomers(){
        return repository.findAll();
     }
 
