@@ -1,4 +1,4 @@
-package org.spring.cloud.demo.registration.model;
+package org.spring.cloud.demo.registration.entity;
 
 import lombok.Data;
 

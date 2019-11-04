@@ -56,31 +56,21 @@ public class JPAConfig {
         properties.setProperty("hibernate.format_sql", "true");
         properties.setProperty("hibernate.jdbc.lob.non_contextual_creation", "true");
 
+        properties.setProperty("hibernate.globally_quoted_identifiers", "true");
+        properties.setProperty("hibernate.order_inserts", "true");
+        properties.setProperty("hibernate.order_updates", "true");
+        properties.setProperty("hibernate.jdbc.batch_size", "100");
 
+        properties.setProperty("hibernate.cache.use_second_level_cache", "false");
+        //properties.setProperty("hibernate.cache.region.factory_class", "100");
+        properties.setProperty("hibernate.cache.use_minimal_puts", "true");
+        properties.setProperty("hibernate.generate_statistics", "false");
+        properties.setProperty("hibernate.cache.use_structured_entries", "true");
 
-
-         /*<entry key="hibernate.default_schema" value="${jdbc.schemaName}" />
-                <entry key="hibernate.hbm2ddl.auto" value="${hibernate.hbm2ddl.auto:validate}" />
-                <entry key="hibernate.dialect" value="${hibernate.dialect:com.numerix.oneview.base.data.dialect.OneviewSQL2012Dialect}" />
-                <entry key="hibernate.show_sql" value="${hibernate.show_sql:false}" />
-                <entry key="hibernate.format_sql" value="${hibernate.format_sql:false}" />
-                <entry key="hibernate.globally_quoted_identifiers" value="${hibernate.globally_quoted_identifiers:true}" />
-                <entry key="hibernate.order_inserts" value="${hibernate.order_inserts:true}" />
-                <entry key="hibernate.order_updates" value="${hibernate.order_updates:true}" />
-                <entry key="hibernate.jdbc.batch_size" value="${hibernate.jdbc.batch_size:100}" />
-                <entry key="hibernate.cache.use_second_level_cache" value="${hibernate.cache.use_second_level_cache:false}" />
-                <entry key="hibernate.cache.use_query_cache" value="${hibernate.cache.use_query_cache:false}" />
-                <entry key="hibernate.cache.region.factory_class" value="${hibernate.cache.region.factory_class:}" />
-                <entry key="hibernate.cache.use_minimal_puts" value="true" />
-                <entry key="hibernate.generate_statistics" value="false" />
-                <entry key="hibernate.cache.use_structured_entries" value="true" />
-                <entry key="javax.persistence.sharedCache.mode" value="ENABLE_SELECTIVE" />
-                <entry key="hibernate.cache.hazelcast.shutdown_on_session_factory_close" value="true" />
-                <entry key="hibernate.enable_lazy_load_no_trans" value="${hibernate.enable_lazy_load_no_trans:true}" />
-                <entry key="hibernate.event.merge.entity_copy_observer" value="allow" />
-                <entry key="hibernate.session_factory.interceptor">
-                    <ref bean="hibernateInterceptor" />
-                </entry>*/
+        properties.setProperty("javax.persistence.sharedCache.mode", "ENABLE_SELECTIVE");
+        properties.setProperty("hibernate.cache.hazelcast.shutdown_on_session_factory_close", "true");
+        properties.setProperty("hibernate.enable_lazy_load_no_trans", "true");
+        properties.setProperty("hibernate.event.merge.entity_copy_observer", "allow");
         return properties;
     }
 

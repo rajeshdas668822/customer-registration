@@ -11,11 +11,11 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "customer")
+@Table(name = "cust_details")
 public class Customer implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "customer_id")
-    @SequenceGenerator(name = "customer_id", sequenceName = "trade_seq")
+    @SequenceGenerator(name = "customer_id", sequenceName = "customer_seq")
     @Column(name = "customer_id", unique = true)
     private String customerId;
 
