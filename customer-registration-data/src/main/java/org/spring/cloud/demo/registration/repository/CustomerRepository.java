@@ -1,6 +1,6 @@
 package org.spring.cloud.demo.registration.repository;
 
-import org.spring.cloud.demo.registration.entity.Customer;
+import org.spring.cloud.demo.registration.entity.insurance.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CustomerRepository extends JpaRepository<Customer,Integer> {

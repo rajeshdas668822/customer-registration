@@ -1,7 +1,7 @@
 package org.spring.cloud.demo.registration.controller;
 
 
-import org.spring.cloud.demo.registration.entity.Customer;
+import org.spring.cloud.demo.registration.entity.insurance.Customer;
 import org.spring.cloud.demo.registration.repository.CustomerRepository;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;

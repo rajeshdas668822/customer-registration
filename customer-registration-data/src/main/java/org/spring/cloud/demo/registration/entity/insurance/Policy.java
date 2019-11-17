@@ -1,25 +1,31 @@
-package org.spring.cloud.demo.registration.entity;
+package org.spring.cloud.demo.registration.entity.insurance;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
+import org.hibernate.envers.Audited;
+import org.spring.cloud.demo.registration.entity.AuditBase;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@ToString(of ={"customerRef","policyRef"})
 @Table(name = "cust_policy")
-public class Policy implements Serializable {
+@Audited
+public class Policy extends AuditBase<String>  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "policy_id")
     @SequenceGenerator(name = "policy_id", sequenceName = "policy_seq")
     @Column(name = "policy_id", unique = true)
-    private int policyId;
+    private Integer policyId;
 
 
     @Column(name = "policy_ref", length = 128, nullable = false, unique = true)
@@ -42,15 +48,23 @@ public class Policy implements Serializable {
 
     @Column(name = "premium_payment_term")
     private int premiumPaymentTerm;
+
     @Column(name = "premium_amount")
     private double premiumAmount;
+
     @Column(name = "payment_mode")
     private String paymentMode;
+
     @Column(name = "effective_date")
     private LocalDate effectiveDate;
+
     @Column(name = "maturity_date")
     private LocalDate maturityDate;
 
+    @ManyToOne
+    @JoinColumn(name = "portfolio_id",updatable = false,insertable = false)
+    private Portfolio portfolio;
 
-
+    @OneToMany(mappedBy = "policy")
+    private List<PolicyCoverage> policyCoverages;
 }

@@ -1,6 +1,6 @@
 package org.spring.cloud.demo.registration.service.impl;
 
-import org.spring.cloud.demo.registration.entity.Customer;
+import org.spring.cloud.demo.registration.entity.insurance.Customer;
 import org.spring.cloud.demo.registration.repository.CustomerRepository;
 import org.spring.cloud.demo.registration.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
