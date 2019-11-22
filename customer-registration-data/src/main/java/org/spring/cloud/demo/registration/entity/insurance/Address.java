@@ -1,9 +1,6 @@
 package org.spring.cloud.demo.registration.entity.insurance;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 import org.hibernate.envers.Audited;
 import org.spring.cloud.demo.registration.entity.AuditBase;
 
@@ -16,6 +13,7 @@ import java.io.Serializable;
 @Entity
 @ToString(of ={"customer.customerRef"})
 @Table(name = "cust_address")
+@EqualsAndHashCode(of={"customer.customerRef","addressId"})
 @Audited
 public class Address extends AuditBase<String> {
 
