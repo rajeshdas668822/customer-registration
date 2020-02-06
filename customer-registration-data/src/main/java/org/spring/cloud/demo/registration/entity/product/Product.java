@@ -26,11 +26,16 @@ public class Product extends AuditBase<String>  {
 
     @Column(name = "description")
     private String description;
+
     @Column(name = "product_type")
     private String productType;
 
     @Column(name = "product_ref",unique = true)
     private String productRef;
+
+    @ManyToOne
+    @JoinColumn(name = "plan_ref")
+    private Plan plan;
 
 
 }

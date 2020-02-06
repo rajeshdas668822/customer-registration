@@ -3,9 +3,8 @@
   <property scope="context" name="LOG_LEVEL_PATTERN" value="%marker %5p"/>
   <include resource="org/springframework/boot/logging/logback/base.xml"/>
   <logger name="org.springframework.web" level="INFO" />
-  <logger name="org.springframework.data.repository" level="info"/>
+  <logger name="org.springframework.data.repository" level="DEBUG"/>
   <logger name="org.springframework.cloud.config.client" level="DEBUG"/>
-
 
   <logger name="org.spring.cloud.demo.registration" level="INFO" additivity="false">
     <appender-ref ref="CONSOLE"/>

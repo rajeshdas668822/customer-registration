@@ -32,7 +32,7 @@ public class CustomerRepositoryTest extends AbstractJpaTest {
         assertNotNull(customers);
         assertTrue(customers.size()>=1);
         assertNotNull(customers.get(0).getAddress());
-        assertEquals(customers.get(0).getAddress().size(),2);
+        assertEquals(1,customers.get(0).getAddress().size());
 
     }
 

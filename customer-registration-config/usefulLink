@@ -1,0 +1,6 @@
+Audit with Inverse and Spring Data Audit:
+https://www.baeldung.com/database-auditing-jpa
+
+
+Generic Repository implimentation.
+https://github.com/jkubrynski/spring-data-examples/blob/master/src/main/java/com/kubrynski/data/repository/generic/GenericRepositoryImpl.java

@@ -16,10 +16,10 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@ToString(of ={"policyRef"})
+@ToString(of = {"policyRef"})
 @Table(name = "cust_policy_coverage")
 @Audited
-public class PolicyCoverage extends AuditBase<String>  {
+public class PolicyCoverage extends AuditBase<String> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "policy_coverage_id")
@@ -27,13 +27,10 @@ public class PolicyCoverage extends AuditBase<String>  {
     @Column(name = "coverage_id", unique = true)
     private Integer coverageId;
 
-    @Column(name = "policy_ref")
-    private String policyRef;
-
     @Column(name = "rider_name")
     private String riderName;
 
-   // private Policy policy;
+    // private Policy policy;
     @Column(name = "coverage_start_date")
     private LocalDate coverageStartDate;
 
@@ -41,7 +38,7 @@ public class PolicyCoverage extends AuditBase<String>  {
     private LocalDate coverageEndDate;
 
     @Column(name = "term")
-    private  int term;
+    private int term;
 
     @Column(name = "extra_premium")
     private double extraPremium;
@@ -49,11 +46,11 @@ public class PolicyCoverage extends AuditBase<String>  {
     @Column(name = "sum_assured")
     private double sumAssured;
 
+    @Column(name = "plan_ref")
+    private String planRef;
+
     @ManyToOne
-    @JoinColumn(name = "policy_id")
+    @JoinColumn(name = "policy_ref")
     private Policy policy;
-
-   // private List<Product> coverProducts;
-
 
 }

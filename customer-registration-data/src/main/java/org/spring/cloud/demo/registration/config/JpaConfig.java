@@ -1,9 +1,6 @@
 package org.spring.cloud.demo.registration.config;
 
 
-import org.spring.cloud.demo.registration.repository.AuditReaderRepository;
-import org.spring.cloud.demo.registration.repository.impl.AuditReaderRepositoryImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,7 +15,6 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.Properties;
@@ -44,10 +40,10 @@ public class JpaConfig {
     private String dbpassword;
 
     @Value("${hibernate.hbm2ddl.auto:validate}")
-    private String  ddlauto;
+    private String ddlauto;
 
     @Value("${hibernate.default_schema:customer}")
-    private String  defaultSchema;
+    private String defaultSchema;
 
     @Value("${hibernate.dialect:org.hibernate.dialect.PostgreSQL95Dialect}")
     private String hibernateDialect;
@@ -88,7 +84,7 @@ public class JpaConfig {
 
 
     @Bean
-    public LocalContainerEntityManagerFactoryBean  entityManagerFactory(){
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
         em.setPackagesToScan(packageToScan);
@@ -100,14 +96,14 @@ public class JpaConfig {
     }
 
 
-    public Properties additionalProperties(){
+    public Properties additionalProperties() {
         Properties properties = new Properties();
-        properties.setProperty("hibernate.hbm2ddl.auto",ddlauto);
-        properties.setProperty("hibernate.default_schema",defaultSchema);
+        properties.setProperty("hibernate.hbm2ddl.auto", ddlauto);
+        properties.setProperty("hibernate.default_schema", defaultSchema);
         properties.setProperty("hibernate.dialect", hibernateDialect);
         properties.setProperty("hibernate.show_sql", showSql);
         properties.setProperty("hibernate.format_sql", formatSql);
-        properties.setProperty("hibernate.jdbc.lob.non_contextual_creation","true" );
+        properties.setProperty("hibernate.jdbc.lob.non_contextual_creation", "true");
         properties.setProperty("hibernate.globally_quoted_identifiers", "true");
         properties.setProperty("hibernate.order_inserts", "true");
         properties.setProperty("hibernate.order_updates", "true");
@@ -120,15 +116,15 @@ public class JpaConfig {
         properties.setProperty("hibernate.cache.use_structured_entries", "true");
 
         properties.setProperty("javax.persistence.sharedCache.mode", sharedCacheMode);
-        properties.setProperty("hibernate.cache.hazelcast.shutdown_on_session_factory_close","true");
+        properties.setProperty("hibernate.cache.hazelcast.shutdown_on_session_factory_close", "true");
         properties.setProperty("hibernate.enable_lazy_load_no_trans", "true");
         properties.setProperty("hibernate.event.merge.entity_copy_observer", "allow");
 
-        properties.setProperty("org.hibernate.envers.audit_table_suffix",auditTableSuffix);
-        properties.setProperty("org.hibernate.envers.revision_field_name",revisionFieldName);
-        properties.setProperty("org.hibernate.envers.revision_type_field_name",revisionFieldTypeName);
+        properties.setProperty("org.hibernate.envers.audit_table_suffix", auditTableSuffix);
+        properties.setProperty("org.hibernate.envers.revision_field_name", revisionFieldName);
+        properties.setProperty("org.hibernate.envers.revision_type_field_name", revisionFieldTypeName);
 
-        properties.setProperty("org.hibernate.envers.default_schema",defaultAuditSchema);
+        properties.setProperty("org.hibernate.envers.default_schema", defaultAuditSchema);
 
         return properties;
     }
@@ -142,7 +138,7 @@ public class JpaConfig {
     }
 
     @Bean
-    public PersistenceExceptionTranslationPostProcessor exceptionTranslation(){
+    public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
         return new PersistenceExceptionTranslationPostProcessor();
     }
 
@@ -152,10 +148,6 @@ public class JpaConfig {
     }
 
 
-    @Bean
-    AuditReaderRepository auditReaderRepository(@Autowired EntityManager em){
-        return new AuditReaderRepositoryImpl(em);
-    }
 
 
 }

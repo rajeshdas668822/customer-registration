@@ -22,7 +22,6 @@ public class ProductServiceTest extends AbstractJpaTest {
         products = productService.save(products);
         assertNotNull(products);
 
-
     }
 
 }
