@@ -32,7 +32,7 @@
         <commons-math3.version>3.6.1</commons-math3.version>
         <!--<springfox-swagger2.version>2.9.2</springfox-swagger2.version>-->
         <springfox-swagger2.version>3.0.0-INTERNAL</springfox-swagger2.version>
-        <mssql-jdbc.version>6.4.0.jre8</mssql-jdbc.version>
+        <mssql-jdbc.version>10.2.4.jre8</mssql-jdbc.version>
         <flyway.version>4.2.0</flyway.version>
         <cq.engine.version>2.12.4</cq.engine.version>
         <drools.version>6.4.0.Final</drools.version>
